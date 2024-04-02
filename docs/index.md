@@ -7,7 +7,7 @@ hero:
   text: "在线知识库"
   tagline: 一个旨在记录、分享java相关技术的知识库。知识库、文章小记中所有笔记都是自己学习、工作中所写，如有问题，请多多指教～
   image:
-    src: ./public/index.png
+    src: /index.png
     alt: VitePress
   actions:
     - theme: brand
