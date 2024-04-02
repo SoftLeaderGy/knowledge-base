@@ -161,7 +161,7 @@ export default defineConfig({
       },
     ],
     footer: {
-      copyright: 'SoftleaderGy '
+      copyright: 'SoftleaderGy版权所有@2018-2024创作不易，请尊重他人劳动成果，未经授权禁止转载。 '
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
