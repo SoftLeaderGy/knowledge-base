@@ -9,16 +9,16 @@ hero:
   actions:
     - theme: brand
       text: 快速学习
-      link: /markdown-examples
+      link: /开源组件构建集成/Arthas/Arthas.md
     - theme: alt
       text: GuoYang文章小记
       link: https://47.93.62.86/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 持续集成
+    details: 在不断的学习中，不断更新！
+  - title: 学无止境
+    details: 为IT行业，添砖Java
+  - title: 道阻且长
+    details: 道路艰险而且漫长
 ---
