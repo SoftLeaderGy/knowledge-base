@@ -6,6 +6,7 @@ export default defineConfig({
   title: "SoftLeaderGy",
   description: "一个旨在记录、分享java相关技术的知识库。同时本人会不定时在另一个博客分享自己的文章，可点击“GuoYang文章小记”浏览哦～，自己记录，分享他人。知识库、文章小记中所有笔记都是自己学习、工作中所写，如有问题，请多多指教～",
   srcDir: 'docs',
+  ignoreDeadLinks: true,
   themeConfig: {
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
@@ -59,7 +60,7 @@ export default defineConfig({
         text: '开源组件构建集成',
         items: [
           { text: 'Arthas', link: '/开源组件构建集成/Arthas/Arthas.md' },
-          { text: 'EasyExcel', link: '/开源组件构建集成/EasyExcel/EasyExcel.md' },
+          // { text: 'EasyExcel', link: '/开源组件构建集成/EasyExcel/EasyExcel.md' },
           { text: 'HertzBeat监控搭建', link: '/开源组件构建集成/HertzBeat监控搭建/HertzBeat监控搭建.md' },
           { text: 'kkFileView集成部署', link: '/开源组件构建集成/kkFileView集成部署/kkFileView集成部署.md' },
           { text: 'MybatisPlusdynamic', link: '/开源组件构建集成/MybatisPlusdynamic/MybatisPlusdynamic.md' },

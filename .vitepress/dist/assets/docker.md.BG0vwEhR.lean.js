@@ -1,1 +1,0 @@
-import{_ as i,c as s,o as a,a4 as l}from"./chunks/framework.CI8or701.js";const u=JSON.parse('{"title":"一、docker基础篇","description":"","frontmatter":{},"headers":[],"relativePath":"docker.md","filePath":"docker.md"}'),e={name:"docker.md"},n=l("",158),t=[n];function p(r,k,h,o,c,d){return a(),s("div",null,t)}const m=i(e,[["render",p]]);export{u as __pageData,m as default};

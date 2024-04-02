@@ -69,7 +69,7 @@ xxl.job.i18n=
 该工程是一个springboot项目，我们只需要在IDEA中执行 XxlJobAdminApplication 类即可运行该工程：
 ![image.png](./images/1686648283472-4db9e00b-b602-44fa-874a-390ac4b00a02.png)
 ### 1.4.3、访问调度中心管理界面
-在浏览器输入 [http://localhost:8080/xxl-job-admin](http://localhost:8080/xxl-job-admin) 然后输入用户名和密码（默认账密为admin/123456），即可看到如下管理界面。
+在浏览器输入 `http://localhost:8080/xxl-job-admin` 然后输入用户名和密码（默认账密为admin/123456），即可看到如下管理界面。
 ![image.png](./images/1686648368211-43ad04a6-d449-46e5-b37a-0c4b08dd30c3.png)
 ## 1.5、自建执行器项目
 以创建一个 springboot 版本的执行器为例
@@ -257,7 +257,7 @@ public class SampleXxlJob {
 ```
 ## 1.6、在调度中心中配置执行器
 > 调度中心指的就是我们之前配置的xxl-job-admin（后台管理）
-> 调度中心前面我们已经配置好了，启动该配置中心，进入[http://localhost:8080/xxl-job-admin](http://localhost:8080/xxl-job-admin) 界面。
+> 调度中心前面我们已经配置好了，启动该配置中心，进入` http://localhost:8080/xxl-job-admin `界面。
 > 初始化账密：admin/123456
 
 ### 1.6.1、配置执行器
