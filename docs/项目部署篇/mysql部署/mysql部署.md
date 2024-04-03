@@ -2,7 +2,7 @@
 > [https://blog.csdn.net/sunnyzyq/article/details/103285472](https://blog.csdn.net/sunnyzyq/article/details/103285472)
 > arm架构：[https://blog.csdn.net/wochunyang/article/details/132460436](https://blog.csdn.net/wochunyang/article/details/132460436)
 
-docker部署mysql
+docker部署mysql,需要docker环境，docker基础不在此处赘述，可以点击 [docker基础](https://softleadergy.gitee.io/Docker/docker%E5%9F%BA%E7%A1%80/docker%E5%9F%BA%E7%A1%80.html)
 ```shell
 docker pull mysql:5.7
 
