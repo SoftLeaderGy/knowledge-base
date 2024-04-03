@@ -23,7 +23,7 @@ export default defineConfig({
           { text: 'JSON小记', link: '/日常积累/JSON小记/JSON小记.md' },
           { text: 'nginx代理DB、ip限制', link: '/日常积累/nginx代理DB、ip限制/nginx代理DB、ip限制.md' },
           { text: 'nginx线上流量复制', link: '/日常积累/nginx线上流量复制/nginx线上流量复制.md' },
-          // { text: 'Post和RequestBody', link: '/日常积累/Post和RequestBody/Post和RequestBody.md' },
+          { text: 'post和RequestBody', link: '/日常积累/post和RequestBody/post和RequestBody.md' },
           { text: 'redis+lua接口限流方案', link: '/日常积累/redis+lua接口限流方案/redis+lua接口限流方案.md' },
           { text: 'Stream流', link: '/日常积累/Stream流/Stream流.md' },
         ]
@@ -60,7 +60,7 @@ export default defineConfig({
         text: '开源组件构建集成',
         items: [
           { text: 'Arthas', link: '/开源组件构建集成/Arthas/Arthas.md' },
-          // { text: 'EasyExcel', link: '/开源组件构建集成/EasyExcel/EasyExcel.md' },
+          { text: 'EasyExcel', link: '/开源组件构建集成/EasyExcel/EasyExcel.md' },
           { text: 'HertzBeat监控搭建', link: '/开源组件构建集成/HertzBeat监控搭建/HertzBeat监控搭建.md' },
           { text: 'kkFileView集成部署', link: '/开源组件构建集成/kkFileView集成部署/kkFileView集成部署.md' },
           { text: 'MybatisPlusdynamic', link: '/开源组件构建集成/MybatisPlusdynamic/MybatisPlusdynamic.md' },
