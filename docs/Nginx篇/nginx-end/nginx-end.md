@@ -158,9 +158,9 @@ cd /usr/nginx/sbin
 
 # 05【掌握】Nginx基础配置详解
 ## Conf/nginx.conf
-| 
 
-#  代表权限  
+
+#代表权限  
 #user  nobody;
 user root;
 #工作进程 

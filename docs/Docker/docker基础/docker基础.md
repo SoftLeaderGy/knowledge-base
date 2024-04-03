@@ -268,9 +268,8 @@ docker run hello-world
 
 	或者分步骤都行 
 
-   -  mkdir -p /etc/docker 
-   -  vim /etc/docker/daemon.json 
-      -  
+   -  mkdir -p /etc/docker
+   -  vim /etc/docker/daemon.json
 > #阿里云
 >  
 > {

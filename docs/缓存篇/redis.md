@@ -861,9 +861,8 @@ class TestBoundAPI {
       - 结论：mybatis底层默认使用的是 org.apache.ibatis.cache.impl.PerpettualCache 实现
    - 自定义Rediscache实现 
       - 通过mybatis默认cache源码得知，可以使用自定义Cache类implements Cache接口，并对里边的方法进行实现 
-         - public class RedisCache implements Cache...
-      - 使用RedisCAche实现 
-         - 
+         - public class RedisCache implements Cache... 
+         - 使用RedisCAche实现
 
 
 ### 14.2、Redis分布式缓存实现（二）

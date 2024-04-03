@@ -225,6 +225,8 @@ docker底层信息Json串```json
       - docker run -d -p 5001:5000 --name web --link db:db training/webapp python app.py（db 容器和 web 容器建立互联关系）
       - --link 参数的格式为 --link name:alias，其中 name 是要链接的容器的名称，alias 是这个连接的别名。
 > - Docker 在两个互联的容器之间创建了一个安全隧道，而且不用映射它们的端口到宿主主机上。在启动 db 容器的时候并没有使用 -p 和 -P 标记，从而避免了暴露数据库端口到外部网络上。
+```
+
 
 ## 2.2、数据卷和数据管理
 数据卷(Data Volume)是一个可供一个或多个容器使用的特殊目录，它绕过 UFS，可以提供很多有用的特性：

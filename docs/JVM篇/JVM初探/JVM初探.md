@@ -1,5 +1,5 @@
 # jvm总结图解
-[JVM图解](https://www.yuque.com/yang.guo.top1/java-start/igxzbx?view=doc_embed)
+[JVM图解](https://softleadergy.gitee.io/JVM%E7%AF%87/JVM%E5%9B%BE%E8%A7%A3/JVM%E5%9B%BE%E8%A7%A3.html)
 # jvm探究
 
 - 谈谈你对jvm的理解？java8 与之前的版本有什么不同

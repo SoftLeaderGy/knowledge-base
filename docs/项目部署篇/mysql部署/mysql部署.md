@@ -1,3 +1,4 @@
+# 一、部署
 > 参考链接：
 > [https://blog.csdn.net/sunnyzyq/article/details/103285472](https://blog.csdn.net/sunnyzyq/article/details/103285472)
 > arm架构：[https://blog.csdn.net/wochunyang/article/details/132460436](https://blog.csdn.net/wochunyang/article/details/132460436)
@@ -8,9 +9,10 @@ docker pull mysql:5.7
 
 docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7
 ```
-## 一、mysql忘记密码
+# 二、相关问题
+## 1、mysql忘记密码
 
-## 二、mysql开放远程连接
+## 2、mysql开放远程连接
 ### 登录mysql服务
 
 - `mysql -u root -p`

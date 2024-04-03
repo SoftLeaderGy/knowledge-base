@@ -8,14 +8,14 @@ hero:
   tagline: 一个旨在记录、分享java相关技术的知识库。知识库、文章小记中所有笔记都是自己学习、工作中所写，如有问题，请多多指教～
   image:
     src: /index.png
-    alt: VitePress
+    alt: SoftLeaderGy
   actions:
     - theme: brand
       text: 快速学习
       link: /开源组件构建集成/Arthas/Arthas.md
     - theme: alt
       text: GuoYang文章小记
-      link: https://47.93.62.86/
+      link: https://softleadergy.github.io
 
 features:
   - title: 持续集成
