@@ -74,7 +74,7 @@ _**~/.bashrc文件**_
 alias mysql=/usr/local/mysql/bin/mysql 
 ```
 _**MacOS 当前系统环境**_
-![image.png](./images/1659929687246-d8d61cdd-3467-4602-9515-401905f7e75c.png)
+![image.png](images/1659929687246-d8d61cdd-3467-4602-9515-401905f7e75c.png)
  ----------2021/07/19 00:13 
 
 ## 二、mac路由篇
