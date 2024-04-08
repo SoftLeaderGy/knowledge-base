@@ -36,15 +36,16 @@ export default defineConfig({
       {
         text: 'Mac相关',
         items: [
-          { text: 'Mac-配置', link: '/乱七八糟教程/Mac-配置/Mac-配置.md' },
-          { text: 'Mac解决安装软件文件损坏问题', link: '/乱七八糟教程/Mac解决安装软件文件损坏问题/Mac解决安装软件文件损坏问题.md' },
-          { text: 'notion_for_mac改中文语言', link: '/乱七八糟教程/notion_for_mac改中文语言/notion_for_mac改中文语言.md' }
+          { text: 'Mac-配置', link: '/Mac相关/Mac-配置/Mac-配置.md' },
+          { text: 'Mac解决安装软件文件损坏问题', link: '/Mac相关/Mac解决安装软件文件损坏问题/Mac解决安装软件文件损坏问题.md' },
+          { text: 'notion_for_mac改中文语言', link: '/Mac相关/notion_for_mac改中文语言/notion_for_mac改中文语言.md' }
         ]
       },
       {
         text: '乱七八糟教程',
         items: [
           { text: 'Github搭建图床', link: '/乱七八糟教程/Github搭建图床/Github搭建图床.md' },
+          { text: '语雀导出文件图片CND指向问题', link: '/乱七八糟教程/语雀导出文件图片CND指向问题/语雀导出文件图片CND指向问题.md' },
         ]
       },
     ],
@@ -74,6 +75,12 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Java基础',
+        items: [
+          { text: 'Java基础', link: '/Java基础/Java基础/Java.md' },
+        ]
+      },
+      {
         text: '微服务篇',
         items: [
           { text: 'SpringBoot配置拦截器', link: '/微服务篇/SpringBoot配置拦截器/SpringBoot配置拦截器.md' },
@@ -86,12 +93,14 @@ export default defineConfig({
         items: [
           { text: 'Eureka', link: '/服务治理篇/Eureka/Eureka.md' },
           { text: 'Zookeeper', link: '/服务治理篇/zookeeper/zookeeper.md' },
-          { text: 'Nacos', link: '/服务治理篇/Nacos/Nacos.md' }
+          { text: 'Nacos', link: '/服务治理篇/Nacos/Nacos.md' },
+          { text: 'Eureka、Zk、Consul对比', link: '/服务治理篇/Eureka、Zk、Consul对比/Eureka、Zk、Consul对比.md' }
         ]
       },
       {
         text: '持久框架篇',
         items: [
+          { text: 'Mybatis', link: '/持久框架篇/Mybatis/Mybatis.md' },
           { text: 'MybatisPlus', link: '/持久框架篇/MybatisPlus/MybatisPlus.md' }
         ]
       },
@@ -113,7 +122,6 @@ export default defineConfig({
           { text: 'Git积累', link: '/版本控制/Git积累/Git积累.md' }
         ]
       },
-
       {
         text: '加解密',
         items: [
@@ -166,10 +174,11 @@ export default defineConfig({
       },
     ],
     footer: {
-      copyright: 'SoftleaderGy版权所有@2018-2024创作不易，请尊重他人劳动成果，未经授权禁止转载。 '
+      message: '<a href="https://github.com/SoftLeaderGy">SoftleaderGy</a>版权所有，创作不易。请尊重他人劳动成果，未经授权禁止转载。<a href="https://beian.miit.gov.cn/">辽ICP备2024027609</a>',
+      // copyright: '版权所有@2018-2024创作不易，请尊重他人劳动成果，未经授权禁止转载。'
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/SoftLeaderGy' }
     ]
   }
 })
