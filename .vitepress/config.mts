@@ -46,6 +46,7 @@ export default defineConfig({
         items: [
           { text: 'Github搭建图床', link: '/乱七八糟教程/Github搭建图床/Github搭建图床.md' },
           { text: '语雀导出文件图片CND指向问题', link: '/乱七八糟教程/语雀导出文件图片CND指向问题/语雀导出文件图片CND指向问题.md' },
+          { text: '解决有道云笔记导出md文件', link: '/乱七八糟教程/解决有道云笔记导出md文件/解决有道云笔记导出md文件.md' },
         ]
       },
     ],
