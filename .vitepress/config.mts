@@ -8,6 +8,15 @@ export default defineConfig({
   srcDir: 'docs',
   ignoreDeadLinks: true,
   themeConfig: {
+    lastUpdated: {
+      text: '最后更新于',
+      // dateStyle 、 timeStyle 参数：short、full、medium
+      formatOptions: {
+        // @ts-ignore
+        dateStyle: 'short',
+        // timeStyle: 'medium'
+      }
+    },
     // 目录层级，显示几级，outline: [1,4] 表示显示1到4级的标题
     outline: [1,4],
     // 目录标题
@@ -16,7 +25,7 @@ export default defineConfig({
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
+      { text: '首页', link: '/' },
       {
         text: '日常积累',
         items: [
@@ -31,6 +40,13 @@ export default defineConfig({
           { text: 'post和RequestBody', link: '/日常积累/post和RequestBody/post和RequestBody.md' },
           { text: 'redis+lua接口限流方案', link: '/日常积累/redis+lua接口限流方案/redis+lua接口限流方案.md' },
           { text: 'Stream流', link: '/日常积累/Stream流/Stream流.md' },
+        ]
+      },
+      {
+        text: '漏洞修复',
+        items: [
+          { text: 'nginx漏洞修复', link: '/漏洞修复/nginx漏洞修复/nginx漏洞修复.md' },
+          { text: 'springboot关闭druid监控', link: '/漏洞修复/springboot关闭druid监控/springboot关闭druid监控.md' }
         ]
       },
       {
