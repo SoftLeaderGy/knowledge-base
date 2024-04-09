@@ -74,12 +74,12 @@ export default defineConfig({
           { text: 'xxl-job搭建', link: '/开源组件构建集成/xxl-job搭建/xxl-job搭建.md' },
         ]
       },
-      // {
-      //   text: 'Java基础',
-      //   items: [
-      //     { text: 'Java基础', link: '/Java基础/Java基础/Java.md' },
-      //   ]
-      // },
+      {
+        text: 'Java基础',
+        items: [
+          { text: 'Java基础', link: '/Java基础/Java基础/Java.md' },
+        ]
+      },
       {
         text: '微服务篇',
         items: [
@@ -89,19 +89,19 @@ export default defineConfig({
         ]
       },
       {
+        text: '持久框架篇',
+        items: [
+          { text: 'Mybatis', link: '/持久框架篇/Mybatis/Mybatis.md' },
+          { text: 'MybatisPlus', link: '/持久框架篇/MybatisPlus/MybatisPlus.md' }
+        ]
+      },
+      {
         text: '服务治理篇',
         items: [
           { text: 'Eureka', link: '/服务治理篇/Eureka/Eureka.md' },
           { text: 'Zookeeper', link: '/服务治理篇/zookeeper/zookeeper.md' },
           { text: 'Nacos', link: '/服务治理篇/Nacos/Nacos.md' },
           { text: 'Eureka、Zk、Consul对比', link: '/服务治理篇/Eureka、Zk、Consul对比/Eureka、Zk、Consul对比.md' }
-        ]
-      },
-      {
-        text: '持久框架篇',
-        items: [
-          { text: 'Mybatis', link: '/持久框架篇/Mybatis/Mybatis.md' },
-          { text: 'MybatisPlus', link: '/持久框架篇/MybatisPlus/MybatisPlus.md' }
         ]
       },
       {
