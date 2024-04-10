@@ -1,6 +1,6 @@
-# [softleadergy.top](softleadergy.top)
+# [softleadergy.top](https://softleadergy.top/)
 
-> [softleadergy.top](softleadergy.top) 一个旨在记录、分享java相关技术的知识库。知识库、文章小记中所有笔记都是自己学习、工作中所写，如有问题，请多多指教～
+> [softleadergy.top](https://softleadergy.top/) 一个旨在记录、分享java相关技术的知识库。知识库、文章小记中所有笔记都是自己学习、工作中所写，如有问题，请多多指教～
 
 #### 介绍
 
