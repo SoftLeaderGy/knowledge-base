@@ -4,20 +4,18 @@
 
 ### shutdown： 关机命令
 
-shutdown -h 10          计算机将在10分钟后关机；
+- `shutdown -h 10` 计算机将在10分钟后关机；
 
-shutdown -r now        系统里吗重启；
+- `shutdown -r now` 系统里吗重启；
 
-shutdown -r 10           系统10分钟后重启
+- `shutdown -r 10` 系统10分钟后重启
 
-1、 一切皆文件
+1. 一切皆文件
 
-2、根目录/，所有的文件都挂载在这个节点下。
+2. 根目录/，所有的文件都挂载在这个节点下。
 
-系统下文件目录的作用：
-
-![image-20200914151528777](/Users/yang/Library/Application Support/typora-user-images/image-20200914151528777.png)
-
+3. 系统下文件目录的作用：
+   - ![1690250779566-baded3ec-4b5f-43a9-9c18-95ccd87c96ddasd.jpg](./images/1690250779566-baded3ec-4b5f-43a9-9c18-95ccd87c96ddasd.jpg)
 ## 常用命令：
 
 ### 目录管理：
@@ -137,12 +135,11 @@ ls -l :查看文件类型、属性、权限
 其中「r」表示可读、「w」表示可写、「x」表示可执行
 
 字母的位置不会变化。没有该权限的会出现「-」。
-
-![image-20200915181738196](/Users/yang/Library/Application Support/typora-user-images/image-20200915181738196.png)
+![img.png](images/img.png)
 
 ## 日常积累
 
-### 下载文件：  sz 文件名
+### 下载文件： sz 文件名
 
 > 从服务端下载到本地
 实例： sz bd2-sub-oip-core-1.0-SNAPSHOT.jar

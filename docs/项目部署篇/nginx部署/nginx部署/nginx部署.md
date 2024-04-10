@@ -30,8 +30,8 @@
 - 查看报错缺少什么依赖
 - 点击[阿里巴巴开源镜像站-OPSX镜像站-阿里云开发者社区](https://developer.aliyun.com/mirror/?spm=5176.28055625.J_4VYgf18xNlTAyFFbOuOQe.121.1147154aprlHtb&scm=20140722.M_9489626._.V_1) -> 选择资源包 -> 进行下载缺少的资源包
 
-![image.png](./images/1692761159805-dd61dfaa-1548-459a-9075-e00b5438b866.png)
-![image.png](./images/1692761326781-79cc2280-cce6-4ead-b451-1475631f8ec3.png)
+![image.png](images/1692761159805-dd61dfaa-1548-459a-9075-e00b5438b866.png)
+![image.png](images/1692761326781-79cc2280-cce6-4ead-b451-1475631f8ec3.png)
 
 - 将下载好的.rpm文件依赖包上传至服务器
 - 执行  `rpm -Uvh XXXXX.rpm --nodeps --force` 或者可以放在一个文件夹下 直接执行`rpm -Uvh *.rpm --nodeps --force`

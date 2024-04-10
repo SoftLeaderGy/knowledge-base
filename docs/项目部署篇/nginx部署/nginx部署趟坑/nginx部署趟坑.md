@@ -5,7 +5,7 @@
 - 问题描述
 
 > make: *** 没有规则可以创建“default”需要的目标“build”。 停止
-> ![image.png](./images/1684892516781-e64e4bbe-112f-4623-9169-a4c39e9dca84.png)
+> ![image.png](images/1684892516781-e64e4bbe-112f-4623-9169-a4c39e9dca84.png)
 
 - 错误原因
 
