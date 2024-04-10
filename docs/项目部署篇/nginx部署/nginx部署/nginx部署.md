@@ -1,4 +1,4 @@
-> nginx部署报错问题请看--> [nginx部署趟坑](https://www.yuque.com/yang.guo.top1/java-start/ts8z0i6p5v25nvwy)
+> nginx部署报错问题请看--> [nginx部署趟坑](/项目部署篇/nginx部署/nginx部署趟坑/nginx部署趟坑.html)
 
 # 一、离线安装
 
