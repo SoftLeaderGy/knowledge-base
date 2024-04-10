@@ -197,8 +197,13 @@ export default defineConfig({
           { text: 'java部署', link: '/项目部署篇/java部署/java部署.md' },
           { text: 'mysql部署', link: '/项目部署篇/mysql部署/mysql部署.md' },
           { text: 'nacos部署', link: '/项目部署篇/nacos部署/nacos部署.md' },
-          { text: 'nginx部署', link: '/项目部署篇/nginx部署/nginx部署.md' },
-          { text: 'nginx部署趟坑', link: '/项目部署篇/nginx部署趟坑/nginx部署趟坑.md' },
+          {
+            text: 'nginx部署',
+            items: [
+              { text: 'nginx部署', link: '/项目部署篇/nginx部署/nginx部署.md' },
+              { text: 'nginx部署趟坑', link: '/项目部署篇/nginx部署趟坑/nginx部署趟坑.md' },
+            ]
+          },
         ]
       },
     ],
