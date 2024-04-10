@@ -152,3 +152,40 @@ location ~ ^/get_text {
 - 文件内容中的 `rotate 10`，其中10为保留天数
 - 修改保存后，让修改生效，执行`logrotate /etc/logrotate.d/nginx`
 
+# 五、proxy_pass末尾带斜杠/和不带的区别
+> 结论
+> - 如果proxy_pass末尾有斜杠/，proxy_pass不拼接location的路径
+> - 如果proxy_pass末尾无斜杠/，proxy_pass会拼接location的路径
+## 1. proxy_pass末尾有斜杠
+```nginx
+location  /api/ {
+    proxy_pass http://127.0.0.1:8000/;
+}
+```
+- 请求地址：`http://localhost/api/test`
+- 转发地址：`http://127.0.0.1:8000/test`
+## 2. proxy_pass末尾无斜杠
+```nginx
+location  /api/ {
+    proxy_pass http://127.0.0.1:8000;
+}
+```
+- 请求地址：`http://localhost/api/test`
+- 转发地址：`http://127.0.0.1:8000/api/test`
+## 3. proxy_pass包含路径，且末尾有斜杠
+```nginx
+location  /api/ {
+    proxy_pass http://127.0.0.1:8000/user/;
+}
+```
+- 请求地址：`http://localhost/api/test`
+- 转发地址：`http://127.0.0.1:8000/user/test`
+
+## 4. proxy_pass包含路径，末尾无斜杠
+```nginx
+location  /api/ {
+    proxy_pass http://127.0.0.1:8000/user;
+}
+```
+- 请求地址：`http://localhost/api/test`
+- 转发地址：`http://127.0.0.1:8000/usertest`
