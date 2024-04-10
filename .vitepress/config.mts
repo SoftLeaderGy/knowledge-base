@@ -106,6 +106,13 @@ export default defineConfig({
         ]
       },
       {
+        text: '数据库篇',
+        items: [
+          { text: 'mysql积累', link: '/数据库篇/mysql/mysql积累/mysql积累.md' },
+          { text: 'mysql相关问题解决', link: '/数据库篇/mysql/mysql相关问题解决/mysql相关问题解决.md' }
+        ]
+      },
+      {
         text: '持久框架篇',
         items: [
           { text: 'Mybatis', link: '/持久框架篇/Mybatis/Mybatis.md' },
