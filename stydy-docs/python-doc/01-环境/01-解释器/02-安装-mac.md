@@ -40,5 +40,13 @@ source ~/.bash_profile
 # 验证
 python -V
 ```
-
 ![python-mac-config.png](images/python-mac-config.png)
+```shell
+#=======================也可以直接使用=============================
+echo 'alias python=python3' >> .bash_profile
+# 使配置生效
+source ~/.bash_profile
+# 验证
+python -V
+```
+![img.png](images/img.png)

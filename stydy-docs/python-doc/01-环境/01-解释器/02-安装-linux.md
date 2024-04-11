@@ -5,7 +5,7 @@
 ![python-linux-downloads.png](images/python-linux-downloads.png)
 
 ```shell
-cd /zhengqingya/soft/python
+cd /opt/python
 
 # 安装所需依赖 
 yum install wget zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make zlib zlib-devel libffi-devel -y
@@ -37,7 +37,7 @@ ln -s /usr/local/python3.10.6/bin/python3.10 /usr/bin/python
 python -V
 ```
 
-![python-linux-install.png](images/python-linux-install.png)
+![img.png](images/img1.png)
 
 #### 问题：创建软链接后，会破坏yum程序的正常使用（只能使用系统自带的python2）
 
