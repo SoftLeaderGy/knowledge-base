@@ -6,7 +6,7 @@ for 临时变量 in 待处理数据集(序列):
 ```
 
 ```
-name = "zhengqingya"
+name = "guoyang"
 for i in name:
     print(i)
 ```
