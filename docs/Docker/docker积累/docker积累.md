@@ -25,7 +25,8 @@ docker logs -f -t --since="2018-02-18" user-uat | grep error >> logs_error.txt
 ## 2.1、一个web应用
 
 - 使用 docker inspect 来查看 Docker 的底层信息。它会返回一个 JSON 文件记录着 Docker 容器的配置和状态信息
-docker底层信息Json串```json
+docker底层信息Json串
+```json
 [
   {
     "Id": "7ffab71229acf64fc1174f0699a4ef0432ab871b4a89610f19fda460d5405845",
