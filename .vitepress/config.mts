@@ -18,10 +18,13 @@ export default defineConfig({
         // timeStyle: 'medium'
       }
     },
+    // 文章大纲
+    aside: true,
     // 目录层级，显示几级，outline: [1,4] 表示显示1到4级的标题
     outline: [1,4],
     // 目录标题
     outlineTitle: 'On the Page',
+
     // logo，需要放在public文件夹下
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
