@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: 快速学习
-      link: /开源组件构建集成/Arthas/Arthas.md
+      link: /sidebar/开源组件构建集成/Arthas/Arthas.md
     - theme: alt
       text: GuoYang文章小记
       link: https://softleadergy.github.io
