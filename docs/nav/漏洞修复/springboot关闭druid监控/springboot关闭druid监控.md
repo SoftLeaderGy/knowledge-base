@@ -30,4 +30,4 @@ spring:
 ```
 
 - 测试
-   - ![image.png](images/1712651074818-b149e8cc-79b1-4ea0-9736-d6397a015d11.png)
+   - ![image.png](images/druid监控关闭.jpg)
