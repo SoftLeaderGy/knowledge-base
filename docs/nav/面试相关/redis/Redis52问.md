@@ -1,6 +1,7 @@
 # Redis52问
+> 转载原文：https://mp.weixin.qq.com/s/AhL6Xs4LjNW_HU8OYN4GLA
 
-## 基础
+## [基础]
 
 #### [ 1.说说什么是Redis?]
 
@@ -153,12 +154,6 @@ Redis6.0的多线程是用多线程来处理数据的 **读写和协议解析** 
 
 这样做的⽬的是因为Redis的性能瓶颈在于⽹络IO⽽⾮CPU，使⽤多线程能提升IO读写的效率，从⽽整体提⾼Redis的性能。
 
-> 基于 Spring Boot + MyBatis Plus + Vue & Element 实现的后台管理系统 + 用户小程序，支持 RBAC
-> 动态权限、多租户、数据权限、工作流、三方登录、支付、短信、商城等功能
-> 
-> * 项目地址：https://github.com/YunaiV/ruoyi-vue-pro
-> * 视频教程：https://doc.iocoder.cn/video/
-
 ## [ 持久化]
 
 #### [ 8.Redis持久化⽅式有哪些？有什么区别？]
@@ -264,12 +259,6 @@ RDB ` 来说要慢很多，这样在 Redis 实例很大的情况下，启动需�
 
 于是在 Redis 重启的时候，可以先加载 ` rdb ` 的内容，然后再重放增量 AOF 日志就可以完全替代之前的 AOF
 全量文件重放，重启效率因此大幅得到提升。
-
-> 基于 Spring Cloud Alibaba + Gateway + Nacos + RocketMQ + Vue & Element
-> 实现的后台管理系统 + 用户小程序，支持 RBAC 动态权限、多租户、数据权限、工作流、三方登录、支付、短信、商城等功能
-> 
-> * 项目地址：https://github.com/YunaiV/yudao-cloud
-> * 视频教程：https://doc.iocoder.cn/video/
 
 ## [ 高可用]
 
@@ -1057,29 +1046,30 @@ Lua脚本能给开发人员带来这些好处：
 
 比如这一段很（烂）经（大）典（街）的秒杀系统利用lua扣减Redis库存的脚本：
 
-​    
-       -- 库存未预热  
-       if (redis.call('exists', KEYS[2]) == 1) then  
-            return -9;  
-        end;  
-        -- 秒杀商品库存存在  
-        if (redis.call('exists', KEYS[1]) == 1) then  
-            local stock = tonumber(redis.call('get', KEYS[1]));  
-            local num = tonumber(ARGV[1]);  
-            -- 剩余库存少于请求数量  
-            if (stock < num) then  
-                return -3  
-            end;  
-            -- 扣减库存  
-            if (stock >= num) then  
-                redis.call('incrby', KEYS[1], 0 - num);  
-                -- 扣减成功  
-                return 1  
-            end;  
-            return -2;  
-        end;  
-        -- 秒杀商品库存不存在  
-        return -1;  
+```lua
+-- 库存未预热  
+if(redis.call('exists',KEYS[2])==1)then  
+        return -9;  
+    end;  
+    -- 秒杀商品库存存在  
+    if(redis.call('exists',KEYS[1]) == 1) then  
+        local stock = tonumber(redis.call('get', KEYS[1]));  
+        local num = tonumber(ARGV[1]);  
+        -- 剩余库存少于请求数量  
+        if (stock < num) then  
+            return -3  
+        end;  
+        -- 扣减库存  
+        if (stock >= num) then  
+            redis.call('incrby', KEYS[1], 0 - num);  
+            -- 扣减成功  
+            return 1  
+        end;  
+        return -2;  
+    end;  
+    -- 秒杀商品库存不存在  
+    return -1;
+```
 
 #### [ 44.Redis的管道了解吗？]
 
@@ -1114,12 +1104,13 @@ Redis是分布式锁本质上要实现的目标就是在 Redis 里面占一个�
 
 ![](images/1a2ec445-6078-4d34-b280-0210b1257f33.jpg)
 
-​    
-    > setnx lock:fighter true  
-    OK  
-    ... do something critical ...  
-    > del lock:fighter  
-    (integer) 1  
+```shell
+> setnx lock:fighter true
+OK
+... do something critical ...
+> del lock:fighter
+(integer) 1
+```
 
 但是有个问题，如果逻辑执行到中间出现异常了，可能会导致 del 指令没有被调用，这样就会陷入死锁，锁永远得不到释放。
 
@@ -1129,13 +1120,14 @@ Redis是分布式锁本质上要实现的目标就是在 Redis 里面占一个�
 
 ![](images/38b9809d-3dd6-4a0e-bebe-48f067764304.jpg)
 
-​    
-    > setnx lock:fighter true  
-    OK  
-    > expire lock:fighter 5  
-    ... do something critical ...  
-    > del lock:fighter  
-    (integer) 1  
+```shell
+> setnx lock:fighter true
+OK
+> expire lock:fighter 5
+... do something critical ...
+> del lock:fighter
+(integer) 1
+```
 
 但是以上逻辑还有问题。如果在 setnx 和 expire 之间服务器进程突然挂掉了，可能是因为机器掉电或者是被人为杀掉的，就会导致 expire
 得不到执行，也会造成死锁。
@@ -1148,9 +1140,9 @@ Redis是分布式锁本质上要实现的目标就是在 Redis 里面占一个�
 
 ![](images/cc6304e5-e629-4a9d-83d7-102e00f783ed.jpg)
 
-​    
-    set lock:fighter3 true ex 5 nx OK ... do something critical ... > del lock:codehole  
-
+```shell
+set lock:fighter3 true ex 5 nx OK ... do something critical ... > del lock:codehole
+```
 上面这个指令就是 setnx 和 expire 组合在一起的原子指令，这个就算是比较完善的分布式锁了。
 
 当然实际的开发，没人会去自己写分布式锁的命令，因为有专业的轮子—— **Redisson** 。
@@ -1161,8 +1153,7 @@ Redis是分布式锁本质上要实现的目标就是在 Redis 里面占一个�
 
 #### [ 46.说说Redis底层数据结构？]
 
-Redis有* _动态字符串(sds)** 、* _链表(list)*_ 、* _字典(ht)*_ 、* _跳跃表(skiplist)*_ 、*
-_整数集合(intset)*_ 、* _压缩列表(ziplist)_ _ 等底层数据结构。
+Redis有*动态字符串(sds)* 、*链表(list)* 、*字典(ht)*、*跳跃表(skiplist)*、*整数集合(intset)*、*压缩列表(ziplist)* 等底层数据结构。
 
 Redis并没有使用这些数据结构来直接实现键值对数据库，而是基于这些数据结构创建了一个对象系统，来表示所有的key-value。
 
