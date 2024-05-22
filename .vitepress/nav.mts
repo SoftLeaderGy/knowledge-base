@@ -15,6 +15,7 @@ export default [
             { text: 'redis+lua接口限流方案', link: '/nav/日常积累/redis+lua接口限流方案/redis+lua接口限流方案.md' },
             { text: 'Stream流', link: '/nav/日常积累/Stream流/Stream流.md' },
             { text: '@JsonFormat日期转换问题', link: '/nav/日常积累/@JsonFormat日期转换问题/@JsonFormat日期转换问题.md' },
+            { text: '日志输出级别详解', link: '/nav/日常积累/日志输出级别详解/日志输出级别详解.md' },
         ]
     },
     {
@@ -22,6 +23,12 @@ export default [
         items: [
             { text: 'nginx漏洞修复', link: '/nav/漏洞修复/nginx漏洞修复/nginx漏洞修复.md' },
             { text: 'springboot关闭druid监控', link: '/nav/漏洞修复/springboot关闭druid监控/springboot关闭druid监控.md' }
+        ]
+    },
+    {
+        text: '面试相关',
+        items: [
+            { text: 'Redis52问', link: '/nav/面试相关/redis/Redis52问.md' }
         ]
     },
     {
@@ -38,6 +45,7 @@ export default [
             { text: 'Github搭建图床', link: '/nav/乱七八糟教程/Github搭建图床/Github搭建图床.md' },
             { text: '语雀导出文件图片CND指向问题', link: '/nav/乱七八糟教程/语雀导出文件图片CND指向问题/语雀导出文件图片CND指向问题.md' },
             { text: '解决有道云笔记导出md文件', link: '/nav/乱七八糟教程/解决有道云笔记导出md文件/解决有道云笔记导出md文件.md' },
+            { text: 'md文档网络图片下载', link: '/nav/乱七八糟教程/md文档网络图片下载/md文档网络图片下载.md' },
         ]
     },
 ]
