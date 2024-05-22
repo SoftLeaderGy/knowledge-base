@@ -253,5 +253,16 @@ scp root@10.58.39.40:/root/index.html /root/
 1. 将 unzip-6.0-19.el7.x86_64.rpm 上传至服务器
 2. 执行 rpm -Uvh unzip-6.0-19.el7.x86_64.rpm  命令安装
 3. ![image.png](images/1690250779566-baded3ec-4b5f-43a9-9c18-95ccd87c96dd.png)
-# 
+ 
+### 环境变量
+```shell
+# 添加系统级
+vim /etc/profile
+export PATH="/opt/STM/STLinux-2.3/devkit/sh4/bin:$PATH"
+source /etc/profile
 
+# 添加用户级
+v ~/.bash.profile
+export CLASSPATH=./JAVAHOME/lib;JAVA_HOME/jre/lib
+source ~/.bash_profile
+```

@@ -1740,8 +1740,3 @@ rabbitmqctl clear_policy ha-all
 ![image.png](images/1660015533632-5745a1dd-c6b6-460b-bad8-f4d8a2ac6bb4.png)
 ![image.png](images/1660015541655-4fc089ab-d6a9-4d75-a975-f6d9d49402c1.png)
 ![image.png](images/1660015549820-19e72fec-e229-4dc0-a174-ff50fc31c850.png)
-> 想要获取该该课程markdown笔记（脑图+笔记）。可以扫描以下
-> 微信公众号二维码。或者搜索微信公众号-Java大世界。回复
-> RabbitMQ即可获取笔记获取方式。
-
-![image.png](images/1660015649392-2a3fd3a9-6223-4a4b-96c0-396e3d1bbc36.png)
