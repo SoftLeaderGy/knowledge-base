@@ -28,7 +28,13 @@ export default [
     {
         text: '面试相关',
         items: [
-            { text: 'Redis52问', link: '/nav/面试相关/redis/Redis52问.md' }
+            { text: 'Spring35问', link: '/nav/面试相关/Spring35问/Spring35问.md' },
+            { text: 'MySQL66问', link: '/nav/面试相关/MySQL66问/MySQL66问.md' },
+            { text: 'MyBatis20问', link: '/nav/面试相关/MyBatis20问/MyBatis20问.md' },
+            { text: 'Redis52问', link: '/nav/面试相关/Redis52问/Redis52问.md' },
+            { text: 'RocketMQ23问', link: '/nav/面试相关/RocketMQ23问/RocketMQ23问.md' },
+            { text: 'JVM50问', link: '/nav/面试相关/JVM50问/JVM50问.md' },
+            { text: '线程池18问', link: '/nav/面试相关/线程池18问/线程池18问.md' },
         ]
     },
     {
