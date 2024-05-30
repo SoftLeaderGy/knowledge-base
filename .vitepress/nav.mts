@@ -34,6 +34,8 @@ export default [
             { text: 'Redis52问', link: '/nav/面试相关/Redis52问/Redis52问.md' },
             { text: 'RocketMQ23问', link: '/nav/面试相关/RocketMQ23问/RocketMQ23问.md' },
             { text: 'JVM50问', link: '/nav/面试相关/JVM50问/JVM50问.md' },
+            { text: '微服务33问', link: '/nav/面试相关/微服务33问/微服务33问.md' },
+            { text: '分布式12问', link: '/nav/面试相关/分布式12问/分布式12问.md' },
             { text: '线程池18问', link: '/nav/面试相关/线程池18问/线程池18问.md' },
         ]
     },
