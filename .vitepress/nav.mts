@@ -36,7 +36,9 @@ export default [
             { text: 'JVM50问', link: '/nav/面试相关/JVM50问/JVM50问.md' },
             { text: '微服务33问', link: '/nav/面试相关/微服务33问/微服务33问.md' },
             { text: '分布式12问', link: '/nav/面试相关/分布式12问/分布式12问.md' },
+            { text: 'Java并发60问', link: '/nav/面试相关/Java并发60问/Java并发60问.md' },
             { text: '线程池18问', link: '/nav/面试相关/线程池18问/线程池18问.md' },
+            { text: '反向面试', link: 'https://gitee.com/softleadergy/reverse-interview-zh' },
         ]
     },
     {
