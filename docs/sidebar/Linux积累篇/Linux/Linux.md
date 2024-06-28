@@ -266,3 +266,13 @@ v ~/.bash.profile
 export CLASSPATH=./JAVAHOME/lib;JAVA_HOME/jre/lib
 source ~/.bash_profile
 ```
+### linux启动jar缓慢解决
+
+1. 查看主机名 hostname
+   ![img.png](images/jarimg.png)
+2. 然后修改/etc/hosts文件，把主机名加在第一行，空格分开
+   > 写在127.0.0.1后边 或者内网主机ip后边都行 
+   ![img_1.png](images/jarimg_1.png)
+3. 验证是否成功 ping + 主机名
+   ![img_2.png](images/jarimg_2.png)
+4. 再次启动jar包只需要几秒钟，之前三四分钟
