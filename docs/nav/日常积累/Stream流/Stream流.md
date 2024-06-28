@@ -58,17 +58,31 @@ System.out.println(intList.stream().count());
 ```
 <a name="MVYRa"></a>
 ## 1.4、map()
-```java
-List<String> list = Arrays.asList("Hello","World","Java");
-List<Integer> intList = Arrays.asList(2,1,4,5,6,3);
-/**
- * map() 对数组中的元素进行操作
- */
-List<Integer> collect = intList.stream()
-        .map(num -> num + 10)
-        .collect(Collectors.toList());
-System.out.println(collect);
-```
+- 基础
+    ```java
+    List<String> list = Arrays.asList("Hello","World","Java");
+    List<Integer> intList = Arrays.asList(2,1,4,5,6,3);
+    /**
+     * map() 对数组中的元素进行操作
+     */
+    List<Integer> collect = intList.stream()
+            .map(num -> num + 10)
+            .collect(Collectors.toList());
+    System.out.println(collect);
+    ```
+- 结果list转换（doList转dtoList）
+  ```java
+        // 查询数据库返回doList
+        List<DoctorInfoNeuDO> doctorInfoNeuDOS = doctorInfoNeuDAO.selectList(wrapper);
+        // doList转换成dtoList
+        List<DoctorInfoNeuDTO> doctorInfoNeuDTOList = doctorInfoNeuDOS.stream().map(item -> {
+            DoctorInfoNeuDTO doctorInfoNeuResDTO = new DoctorInfoNeuDTO();
+            BeanUtils.copyProperties(item, doctorInfoNeuResDTO);
+            return doctorInfoNeuResDTO;
+        }).collect(Collectors.toList());
+        // 返回dtoList结果集
+        return doctorInfoNeuDTOList;
+  ```
 <a name="gZKh1"></a>
 ## 1.5、reduce()
 ```java
