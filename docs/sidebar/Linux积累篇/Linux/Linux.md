@@ -276,3 +276,38 @@ source ~/.bash_profile
 3. 验证是否成功 ping + 主机名
    ![img_2.png](images/jarimg_2.png)
 4. 再次启动jar包只需要几秒钟，之前三四分钟
+
+### linux修改网络ip
+1. 查看当前ip地址`ip addr`
+2. `cd /etc/sysconfig/network-scripts`
+3. `vim ifcfg-ens33`
+4. 配置文件
+   ```shell
+   TYPE=Ethernet
+   PROXY_METHOD=none
+   BROWSER_ONLY=no
+   BOOTPROTO=static
+   DEFROUTE=yes
+   IPV4_FAILURE_FATAL=no
+   IPV6INIT=yes
+   IPV6_AUTOCONF=yes
+   IPV6_DEFROUTE=yes
+   IPV6_FAILURE_FATAL=no
+   IPV6_ADDR_GEN_MODE=stable-privacy
+   NAME=ens33
+   UUID=12bdc88c-bdd9-4feb-a8ef-6e7003db9155
+   DEVICE=ens33
+   ONBOOT=yes
+   
+   
+   IPADDR=10.47.80.251
+   GATEWAY=10.47.80.2
+   NETMASK=255.255.255.0
+   DNS1=8.8.8.8
+   ```
+5. 重启网络服务
+   ```shell
+   service network restart
+   或
+   systemctl  network restart
+   ```
