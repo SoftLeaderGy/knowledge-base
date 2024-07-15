@@ -8,7 +8,7 @@ export default defineConfig({
   description: "一个旨在记录、分享编程相关技术的知识库。同时本人会不定时在另一个博客分享自己的文章，可点击“GuoYang文章小记”浏览哦～，自己记录，分享他人。知识库、文章小记中所有笔记都是自己学习、工作中所写，如有问题，请多多指教～",
   srcDir: 'docs',
   ignoreDeadLinks: true,
-  // base: '/knowledge-base/',
+  base: '/knowledge-base/',
   themeConfig: {
     lastUpdated: {
       text: '最后更新于',
