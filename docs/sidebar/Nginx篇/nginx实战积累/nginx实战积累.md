@@ -189,3 +189,32 @@ location  /api/ {
 ```
 - 请求地址：`http://localhost/api/test`
 - 转发地址：`http://127.0.0.1:8000/usertest`
+
+
+# 二、nginx配置upstream时header问题
+
+> Nginx 通过upstream反向代理报 400 Bad Request
+
+- 解决
+  - 设置`proxy_set_header HOST $host`
+    > 在`location`块中加上`proxy_set_header HOST $host`。（注意不能同时加上这两个：`proxy_set_header HOST $host;` `proxy_set_header Host $http_host;`）
+  - 分析
+    >   nginx在没有配置proxy_set_header HOST $host 的时候，在转发http请求的时候会默认把upstream的名称作为Host头部的内容。如果像上面例子中那样，upstream名称后面有下划线，就会被tomcat收到，从而报错。proxy_set_header HOST $host这个配置的主要是在nginx在转发htp请求的时候会加上实际的Host请求头。如http请求是 http://abc.com/hello ，那么nginx在转发http请求的时候会原封不动的把host请求头(Host:abc.com)转发给后台服务。
+  - upstream后面的名称去掉下划线：
+    > 从上面的分析中可知，去掉upstream后面名称中的下划线也可以避免这个问题。
+  
+- 示例
+  ```nginx
+  upstream test_interface {
+    server 192.168.12.2 8080;
+  }
+  
+  server {
+    listen       12345;
+    server_name  localhost;
+    location / {
+      proxy_set_header HOST $host
+      proxy_pass http://test-interface;
+    }
+  }
+  ```
