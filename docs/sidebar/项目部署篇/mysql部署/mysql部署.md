@@ -30,3 +30,33 @@ docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/
 
 - 再次使用客户端连接即可
 
+## 3、mysql8.X 导入数据到 mysql5.X
+
+> 在工作中如果我们本地的是mysql8.0，但是我们的在部署初始化线上环境的时候如果，线上的mysql是5.X的版本的话
+> 我们就没办法将我们本地的sql库表直接导入到线上mysql中，有可能出现的问题“Unknown collation: 'utf8mb4_0900_ai_ci”
+- 解决
+  1. 将文件中的所有`utf8mb4_0900_ai_ci` 替换为 `utf8_general_ci`
+  2. 将文件中的所有`utf8mb4`替换为`utf8`
+
+
+## 4、部署mysql启动报Failed to start mysqld.service: Access denied
+
+- 报错内容
+  > [root@localhost etc]# sudo systemctl start mysqld.service
+  > Failed to start mysqld.service: Access denied
+  > See system logs and 'systemctl status mysqld.service' for details.
+
+- 解决方法
+  ```shell
+  # 永久生效
+  # 操作前先备份
+    cp /etc/selinux/config /etc/selinux/config.bak
+    cat /etc/selinux/config
+  # 更改setlinux级别
+  #SELINUX参数enforcing代表打开，disabled代表关闭
+    将SELINUX=enforcing改成SELINUX=disabled
+  # 重启服务器
+    reboot
+  # 查看selinux状态：
+    getenforce
+  ```
