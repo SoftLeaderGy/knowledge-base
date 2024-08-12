@@ -26,6 +26,10 @@ docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/
 ### 执行更新权限语句
 
 - `update user set Host='%' where User='root';`
+
+### 更新缓存
+
+- `FLUSH`
 ### 完成
 
 - 再次使用客户端连接即可
