@@ -1,0 +1,24 @@
+```contributionGraph
+title: SoftLeaderGy
+graphType: default
+dateRangeValue: 1
+dateRangeType: LATEST_YEAR
+startOfWeek: 1
+showCellRuleIndicators: true
+titleStyle:
+  textAlign: center
+  fontSize: 15px
+  fontWeight: normal
+dataSource:
+  type: PAGE
+  value: ""
+  dateField:
+    type: FILE_MTIME
+fillTheScreen: false
+enableMainContainerShadow: false
+cellStyle:
+  minWidth: 10px
+  minHeight: 10px
+cellStyleRules: []
+
+```
