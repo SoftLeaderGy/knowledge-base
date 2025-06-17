@@ -11,12 +11,8 @@
             "id": "f25e496d0c551a44",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/nav/漏洞修复/nginx漏洞修复/nginx漏洞修复.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/nav/漏洞修复/nginx漏洞修复/nginx漏洞修复.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/nav/漏洞修复/nginx漏洞修复/nginx漏洞修复.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "docs/nav/漏洞修复/nginx漏洞修复/nginx漏洞修复.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -148,6 +140,7 @@
   },
   "active": "f25e496d0c551a44",
   "lastOpenFiles": [
+    "docs/nav/漏洞修复/nginx漏洞修复/nginx漏洞修复.md",
     "未命名 1.canvas",
     "README.md",
     "未命名/未命名.md",
