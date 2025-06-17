@@ -38,7 +38,7 @@ features:
 
 import { VPTeamMembers } from 'vitepress/theme';
 import { defineConfig } from 'vitepress';
-const base = '/knowledge-base/';
+const base = '/';
 
 const members = [
 
