@@ -191,7 +191,7 @@ location  /api/ {
 - 转发地址：`http://127.0.0.1:8000/usertest`
 
 
-# 二、nginx配置upstream时header问题
+# 六、nginx配置upstream时header问题
 
 > Nginx 通过upstream反向代理报 400 Bad Request
 
@@ -218,3 +218,23 @@ location  /api/ {
     }
   }
   ```
+
+
+# 七、nginx代理Websocket
+
+- 示例
+> 如 ws://11.22.33.44/ 为我们要转发的目标websocket地址
+
+  ```nginx
+  server {
+    listen       12345;
+    server_name  localhost;
+    location /wstest/ {
+        proxy_pass http://11.22.33.44/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+    }
+  }
+  ```
+> 转发后使用 ws:nginx_ip:12345/wstest/ 即可连接
