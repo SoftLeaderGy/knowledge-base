@@ -32,7 +32,8 @@ export default [
     items: [
       { text: 'SpringBoot配置拦截器', link: '/sidebar/微服务篇/SpringBoot配置拦截器/SpringBoot配置拦截器.md' },
       { text: 'boot相关图解', link: '/sidebar/微服务篇/boot相关图解/boot相关图解.md' },
-      { text: 'springcloudV2.0', link: '/sidebar/微服务篇/springcloudV2.0/springcloudV2.0.md' }
+      { text: 'springcloudV2.0', link: '/sidebar/微服务篇/springcloudV2.0/springcloudV2.0.md' },
+      { text: 'springboot-integration-mqtt.md', link: '/sidebar/微服务篇/SpringIntegration/springboot-integration-mqtt.md' },
     ]
   },
   {
