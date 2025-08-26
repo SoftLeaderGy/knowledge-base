@@ -1,5 +1,5 @@
 
-# 关于 Spring Integration集成MQTT案例
+# Spring Integration集成MQTT案例
 适合的读者，略微了解SpringBoot、消息队列的朋友，想了解和尝试使用Spring Integration框架，想扩展知识边界。
 
 ## 前言
@@ -8,9 +8,9 @@
 
 MQTT我想大部分朋友应该都是知道的，即使没有使用过MQTT，肯定也使用过它的兄弟们，RabbitMQ、RocketMQ和Kafka等消息队列.
 
-但这次的主角并非是MQTT，而是 `Spring Integration` ，如果是没有怎么注意Spring官网的朋友，可能甚至都没咋听过 `Spring Integration` 框架，它是针对类似信息流的一个上层≤抽象，不只是MQTT，比如AMQP、MAIL都支持，贴一张官网的截图，诸如下列是都支持的。
+但这次的主角并非是MQTT，而是 `Spring Integration` ，如果是没有怎么注意Spring官网的朋友，可能甚至都没咋听过 `Spring Integration` 框架，它是针对类似信息流的一个上层抽象，不只是MQTT，比如AMQP、MAIL都支持，贴一张官网的截图，诸如下列是都支持的。
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_1.png)
+![image.png](images/img_1.png)
 
 正如Spring的一贯风格，比如以前刚学Spring 的时候，肯定是学过Spring Data,知道它就是针对数据库的一系列抽象。Spring Integration 也是如此，不过抽象的对象换成了信息流罢啦。
 
@@ -19,7 +19,7 @@ MQTT我想大部分朋友应该都是知道的，即使没有使用过MQTT，肯
 本文大纲如下：
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/dagang.png)
+![image.png](images/dagang.png)
 
 ## 一、SpringBoot常规方式集成MQTT
 
@@ -399,12 +399,12 @@ Spring Integraion 有几个比较重要的基础概念，理解完之后，看�
 
 在 `Spring Integration` 中，它由有效负载和标头组成。Payload（有效负载）可以是任何类型，Header（标头）包含常用的必需信息，例如 ID、时间戳、相关 ID 和返回地址。标头还用于在连接的传输之间传递值。
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img.png)
+![image.png](images/img.png)
 2、`Message Channel` 消息通道代表管道和过滤器架构中的“管道”。生产者将消息发送到通道，消费者从通道接收消息。
 
 因此，**消息通道解耦了消息传递组件**，并且还为消息拦截和监视提供了便利的点。
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_2.png)
+![image.png](images/img_2.png)
 
 实际框架中针对Channel 的实现有多种，后文案例中暂时只使用了点对点的 `DirectChannel` 通道。
 
@@ -414,12 +414,12 @@ Spring Integraion 有几个比较重要的基础概念，理解完之后，看�
 
 比如后面案例中的一段代码：
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_24.png)
+![image.png](images/img_24.png)
 
 4、**`Message Router`** 消息路由器负责决定接下来应该接收该消息的一个或多个通道（如果有）。通常，消息路由（Router）可根据消息体类型（Payload Type Router）、消息头的值（Header Value Router）以及定义好的接收表（Recipient List Router）作为条件，来决定消息传递到的通道。
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_23.png)
+![image.png](images/img_23.png)
 白话文就是**我们可以根据信息中的某个字段，判断这条信息，到底要被我们投递到那个通道去**。
 
 5、`Service Activator` 服务激活器是用于将服务实例连接到消息传递系统的通用端点。**必须配置输入消息通道**，如果要调用的服务方法有返回值，还可以提供输出消息通道。
@@ -427,20 +427,20 @@ Spring Integraion 有几个比较重要的基础概念，理解完之后，看�
 服务激活器调用某个服务对象上的操作来处理请求消息，提取请求消息的有效负载并进行转换（如果该方法不需要消息类型参数）。每当服务对象的方法返回一个值时，如果需要，该返回值同样会转换为回复消息（如果它还不是消息类型）。该回复消息被发送到输出通道。
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_22.png)
+![image.png](images/img_22.png)
 **图 4.** `Service Activator`
 
 实际上 `Service Activator` 在代码中是一个 `@ServiceActivator()`注解，如下案例：
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_21.png)
+![image.png](images/img_21.png)
 6、`Channel Adapter`通道适配器是将消息通道连接到其他系统或传输的端点。通道适配器可以是入站适配器，也可以是出站适配器。通常，通道适配器在消息与从其他系统接收或发送到其他系统的任何对象或资源（文件、HTTP 请求、JMS 消息等）之间进行一些映射。根据传输方式，通道适配器还可以填充或提取消息标头值。
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_20.png)
+![image.png](images/img_20.png)
 **图 5. 入站通道适配器端点将源系统连接到`MessageChannel`.**
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_19.png)
+![image.png](images/img_19.png)
 **图 6. 出站通道适配器端点将 a 连接`MessageChannel`到目标系统。**
 
 Channel Adapter 用来连接 MessageChannel 和具体的消息端口，例如通信的 topic。
@@ -448,7 +448,7 @@ Channel Adapter 用来连接 MessageChannel 和具体的消息端口，例如通
 写的时候，浅浅的翻阅了下源码，大致是这三个类，等看了后面的案例，然后再看下这几个类，流程还是很容易懂的。
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_18.png)
+![image.png](images/img_18.png)
 连接MQTT的代码在`MqttPahoMessageDrivenChannelAdapter.connectAndSubscribe()` 中。
 
 只是在官方文档中，挑选了部分概念拿出来简单的讲述了一下，有很多的文字还是直接copy 的官网文档，感兴趣的话，还是更建议你去拜读官方文档，祝你能有所收获。
@@ -458,7 +458,7 @@ Channel Adapter 用来连接 MessageChannel 和具体的消息端口，例如通
 在讲代码之前，画了一张图，简单讲述一下大致数据流转流程是什么样的，同时也便于理解后面的代码是如何的（见谅，不好改成竖图啦）
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_17.png)
+![image.png](images/img_17.png)
 数据的大致流转过程就如上图这般，将这副图和上文中所谈及的概念，关联起来，应该能理解大部分啦。
 
 具体的 Spring Integration 的流程图，其实远比这张图的流程要复杂（主要是牵扯到的上层抽象比较多），上图更多的是对后面的案例中的数据的一个数据流转图，让大家能更好的理解代码。
@@ -471,7 +471,7 @@ Channel Adapter 用来连接 MessageChannel 和具体的消息端口，例如通
 
 ### 4.1、项目结构
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_16.png)
+![image.png](images/img_16.png)
 就常规项目结构，普通且简单\~
 
 相关依赖：
@@ -523,7 +523,7 @@ yaml配置文件：
 具体的MQTT的连接参数是在红框标记的地方整合到 `MqttConnectOptions` 中的，但实际上它是采用`MqttUseEnum` 枚举的方式将yaml配置文件的参数映射到`MqttClientOptions` ，坦白说，用起来是真的舒服啊
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_15.png)
+![image.png](images/img_15.png)
 主要是两个地方：
 
 1、一个使用枚举类来映射ymal文件，可以学习学习
@@ -716,7 +716,7 @@ Channel的具体的实现有多种，可参考官方文档：**[Message Channels
 
 看完还是不理解，然后我又拆出来，单独询问了一遍：
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_14.png)
+![image.png](images/img_14.png)
 看完这个就大致明白啦，这个参数是 `Spring Integration` 由框架自动传递给Lambda表达式的参数。
 
 从其他博主那找了一个简单案例：`Spring Integration`提供了一个`IntegrationFlow`来定义系统继承流程，而通过`IntegrationFlows`和`IntegrationFlowBuilder`来实现使用Fluent API来定义流程。在`Fulent API`里，分别提供了下面方法来映射`Spring Integration`的端点（EndPoint）。
@@ -813,21 +813,21 @@ public class EnventsTestServiceImpl implements EnventsTestService {
 不知道看到这里的小伙伴是否还记得基础概念的这张图：
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_13.png)
+![image.png](images/img_13.png)
 与外界信息来源进行交互的ChannelAdapter（入站适配器）来做的，在谈到入站适配器的配置时，我们也看到了连接也是它来做的，包括初始化时，可以订阅配置文件中配置的主题。
 
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_12.png)
+![image.png](images/img_12.png)
 那么自然添加新的主题，也是通过它来完成啦，以下为具体实现，调用则是在上层抽象类 `AbstractMqttMessageDrivenChannelAdapter 中`
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_11.png)
+![image.png](images/img_11.png)
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_10.png)
+![image.png](images/img_10.png)
 案例中的应用：
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_9.png)
+![image.png](images/img_9.png)
 ### 4.9、向某个主题发送消息和`@MessagingGateway`注解
 
 坦白说，在我刚看下面这段代码的时候，我也是有些懵的，虽然意思很好猜，就是发送消息，但为啥是这样写，却是完全不懂啦。**不过正是因为这些好奇，最后才组成了这篇文章吧**。
@@ -866,12 +866,12 @@ public class EnventsTestServiceImpl implements EnventsTestService {
 
 案例中的应用：
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_8.png)
+![image.png](images/img_8.png)
 ### 4.10、出站适配器
 
 谈到这个，还是把上面的图扒拉下来：
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_7.png)
+![image.png](images/img_7.png)
 
 
 不过这里的出站适配器是由`MqttPahoMessageHandler`实现的。
@@ -913,14 +913,13 @@ public class EnventsTestServiceImpl implements EnventsTestService {
 ### 4.11、测试效果
 
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_6.png)
+![image.png](images/img_6.png)
 如果启动项目后，要订阅新的主题：
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_5.png)
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_4.png)
+![image.png](images/img_5.png)
+![image.png](images/img_4.png)
 
-![image.png](https://cdn.jsdelivr.net/gh/SoftLeaderGy/Pic@img/img/img_3.png)
+![image.png](images/img_3.png)
 具体代码：
-
 ```java
     @RestController
     @RequestMapping("/topic")
